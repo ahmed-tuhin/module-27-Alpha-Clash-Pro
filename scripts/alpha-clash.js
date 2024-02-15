@@ -12,7 +12,14 @@
 //     playGroundSection.classList.remove('hidden')
 // }
 
+function handleKeyboardButtonPress(){
+    console.log('button press');
 
+}
+
+document.addEventListener('keyup',handleKeyboardButtonPress)
+
+// captured keyboard key press
 function continueGame(){
     // step-1: generate a random alphabet
      const alphabet = getARandomAlphabet();
