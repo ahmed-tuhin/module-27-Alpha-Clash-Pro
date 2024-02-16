@@ -64,7 +64,9 @@ function handleKeyboardButtonPress(event){
         const updatedLife = currentLife - 1;
         setTextElementValueById('current-life',updatedLife)
 
-
+        if( updatedLife === 0){
+           gameOver();
+        }
 
         //-----------------------------------------------------------------------------------
         // // step-1:  get the current life number
@@ -98,7 +100,20 @@ function continueGame(){
 
 //-------------------- system 2 -------------------
 function play(){
+    // hide everything show only playground
     hideElementById('home-screen')
     showElementById('play-ground')
+    hideElementById('final-score')
+
+    //reset score and life
+    setTextElementValueById('current-life',5)
+    setTextElementValueById('current-score',0)
     continueGame()
 }
+
+
+function gameOver(){
+    hideElementById('play-ground')
+    showElementById('final-score')
+}
+
